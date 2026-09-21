@@ -39,7 +39,7 @@ def log_prediction(text: str, label: str, confidence: float):
 
 
 # --- INTERFACCIA UTENTE ---
-st.title("📊 MLOps Sentiment Analysis & Monitoring Platform")
+st.title("📊 learning Sentiment Analysis & Monitoring Platform")
 st.markdown("Applicazione aziendale per il monitoraggio e l'inferenza in tempo reale — **MachineInnovators Inc.**")
 
 st.sidebar.header("⚙️ Navigazione")
