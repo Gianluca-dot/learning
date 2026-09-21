@@ -1,6 +1,7 @@
 import os
 import json
-from src.evaluate import run_evaluation, load_config
+
+from src.evaluate import run_evaluation
 from src.data import load_config
 
 def test_run_evaluation_and_quality_gate():
