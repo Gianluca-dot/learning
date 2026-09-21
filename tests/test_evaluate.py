@@ -1,7 +1,7 @@
 import os
 import json
 from src.evaluate import run_evaluation, load_config
-from src.data import load config
+from src.data import load_config
 
 def test_run_evaluation_and_quality_gate():
     """Esegue la valutazione completa e verifica che le metriche superino il Quality Gate."""
