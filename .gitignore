@@ -1,1 +1,31 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
 
+# Modelli e checkpoint locali pesanti
+models/
+retrained_model/
+final_model/
+results/
+*.safetensors
+*.bin
+*.pt
+*.onnx
+
+# Ambiente virtuale locale
+venv/
+.venv/
+env/
+
+# Artifact di runtime Colab / OS
+.ipynb_checkpoints/
+.config/
+sample_data/
+.DS_Store
+
+# File di log generati a runtime
+data/predictions_log.csv
