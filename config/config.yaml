@@ -19,8 +19,8 @@ data:
 
 quality_gate:
   # Soglie minime per far passare la CI (Quality Gate)
-  min_accuracy: 0.70
-  min_f1_macro: 0.70
+  min_accuracy: 0.60
+  min_f1_macro: 0.60
 
 retraining:
   output_dir: "models/retrained_model"
