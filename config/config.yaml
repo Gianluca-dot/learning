@@ -1,7 +1,7 @@
 project:
   name: "MachineInnovators Sentiment Monitoring"
   version: "1.0.0"
-  description: "MLOps Sentiment Analysis Pipeline and Monitoring for MachineInnovators Inc."
+  description: "learning Sentiment Analysis Pipeline and Monitoring for MachineInnovators Inc."
 
 model:
   name: "cardiffnlp/twitter-roberta-base-sentiment-latest"
