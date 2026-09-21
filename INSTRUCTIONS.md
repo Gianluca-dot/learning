@@ -1,3 +1,8 @@
+> ⚠️ **AVVISO IMPORTANTE SULLA TRADUZIONE AUTOMATICA:**
+> Se stai usando il browser in italiano con la **traduzione automatica attiva** (es. Google Translate integrato in Chrome/Edge), **DISATTIVALA** per questa pagina o per il repository GitHub.
+> La traduzione automatica potrebbe modificare i nomi dei file, dei comandi o dei percorsi di sistema (es. trasformando `data/` in `dati/` o `evaluate.py` in `valuta.py`), compromettendo l'esecuzione del codice e i comandi da terminale.
+
+
 # 📖 Guida Completa per l'Avvio del Progetto
 
 Questa guida contiene tutte le istruzioni dettagliate per installare ed eseguire la piattaforma **learning** sul tuo computer o su Google Colab.
