@@ -3,10 +3,11 @@ data:
   dataset_subset: "sentiment"
   dataset_config: "sentiment"
   sample_size: 500
+  random_seed: 42
+  seed: 42
   test_sample_path: "data/test_sample.csv"
   metrics_output_path: "data/metrics.json"
   test_size: 0.2
-  seed: 42
 
 model:
   name: "cardiffnlp/twitter-roberta-base-sentiment-latest"
