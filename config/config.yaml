@@ -12,6 +12,6 @@ data:
 training:
   epochs: 1
   batch_size: 16
-  learning_rate: 2e-5
-  min_f1_improvement: 0.005
+  learning_rate: 0.00002
   output_dir: "./results"
+  min_f1_improvement: 0.005
