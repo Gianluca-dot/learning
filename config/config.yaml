@@ -1,33 +1,8 @@
-data:
-  dataset_name: "cardiffnlp/tweet_eval"
-  dataset_subset: "sentiment"
-  dataset_config: "sentiment"
-  sample_size: 500
-  random_seed: 42
-  seed: 42
-  test_sample_path: "data/test_sample.csv"
-  metrics_output_path: "data/metrics.json"
-  test_size: 0.2
-
 model:
   name: "cardiffnlp/twitter-roberta-base-sentiment-latest"
-  save_directory: "models/sentiment_model"
-  max_length: 128
-  num_labels: 3
-  labels:
-    - "negative"
-    - "neutral"
-    - "positive"
 
 training:
   epochs: 1
   batch_size: 16
-  learning_rate: 0.00002
-  output_dir: "./results"
+  learning_rate: 2e-5
   min_f1_improvement: 0.005
-  quality_gate_f1: 0.60
-
-quality_gate:
-  min_accuracy: 0.60
-  min_f1: 0.60
-  min_f1_macro: 0.60
