@@ -1,40 +1,55 @@
-> ⚠️ **AVVISO IMPORTANTE SULLA TRADUZIONE AUTOMATICA:**
-> Se stai usando il browser in italiano con la **traduzione automatica attiva** (es. Google Translate integrato in Chrome/Edge), **DISATTIVALA** per questa pagina o per il repository GitHub.
-> La traduzione automatica potrebbe modificare i nomi dei file, dei comandi o dei percorsi di sistema (es. trasformando `data/` in `dati/` o `evaluate.py` in `valuta.py`), rendendo difficile, l'individuazione dei file e dei relati comandi.
+# 🚀 Pipeline di Retraining e Monitoraggio MLOps — MachineInnovators Inc.
 
+Questa guida descrive il flusso di lavoro completo per la gestione, il retraining e il monitoraggio del modello di sentiment analysis (`cardiffnlp/twitter-roberta-base-sentiment-latest`). 
 
-# 📖 Guida Completa per l'Avvio del Progetto
-
-Questa guida contiene tutte le istruzioni dettagliate per installare ed eseguire la piattaforma **learning** sul tuo computer o su Google Colab.
+Il processo garantisce la riproducibilità tramite dipendenze bloccate, campionamento stratificato dei dati e controlli automatizzati di qualità (*Quality Gates*).
 
 ---
 
-## 🔰 1. Prerequisiti
-
-* **Python 3.10+:** [Download Python](https://www.python.org/downloads/) *(durante l'installazione spunta "Add Python to PATH")*.
-* **Git:** [Download Git](https://git-scm.com/downloads).
+## 📋 Prerequisiti
+* Un account Google per accedere a **Google Colab**.
+* **Accelerazione Hardware (GPU):** Consigliato l'uso di una GPU su Colab (*Runtime -> Cambia tipo di runtime -> T4 GPU*).
 
 ---
 
-## ⚙️ 2. Installazione e Configurazione Locale
+## 🛠️ Guida Operativa: Esecuzione del Notebook
+Il flusso completo è racchiuso all'interno del notebook ufficiale: 
+📂 `notebooks/retrain_pipeline.ipynb`
 
-Apri il **Terminale** (Mac/Linux) o il **Prompt dei Comandi / PowerShell** (Windows) ed esegui i seguenti comandi in sequenza:
+Esegui le celle in sequenza seguendo questi passaggi:
 
-```bash
-# 1. Clona il repository sul tuo computer
-git clone [https://github.com/MachineInnovators/learning.git](https://github.com/MachineInnovators/learning.git)
+### Passaggio 1: Installazione delle dipendenze e verifica GPU
+Questo blocco installa le librerie esatte definite nel file `requirements.txt` della repository e verifica la disponibilità e il nome della GPU attiva.
 
-# 2. Entra nella cartella del progetto
-cd learning
+```python
+# Installazione dipendenze dal file requirements.txt della repository
+!pip install -r requirements.txt
 
-# 3. Crea l'ambiente virtuale
-python -m venv venv
+import torch
+print(f"PyTorch Version: {torch.__version__}")
+print(f"CUDA disponibile: {torch.cuda.is_available()}")
+if torch.cuda.is_available():
+    print(f"Device GPU: {torch.cuda.get_device_name(0)}")
 
-# 4. Attiva l'ambiente virtuale
-# Su Windows (Prompt dei Comandi):
-venv\Scripts\activate
-# Su Mac/Linux:
-source venv/bin/activate
+Passaggio 2: Estrazione stratificata dei dati
+Esegue lo script modulare per la preparazione e il campionamento dei dati necessari al modello.
 
-# 5. Installa le dipendenze bloccate
-pip install -r requirements.txt
+# Esecuzione modulare dello script di preparazione dati
+!python src/data.py
+Passaggio 3: Valutazione Baseline e salvataggio metriche reali
+Calcola in modo dinamico l'Accuracy e il punteggio F1-Score del modello pre-addestrato, salvando i risultati nel percorso standardizzato.
+
+# Calcolo dinamico dell'Accuracy e F1-Score con salvataggio in data/metrics.json
+!python src/evaluate.py
+Passaggio 4: Verifica dell'output generato
+Legge e stampa il file data/metrics.json per validare le metriche reali prodotte dalla pipeline prima del rilascio o del fine-tuning.
+
+import json
+
+with open('data/metrics.json', 'r') as f:
+    metrics = json.load(f)
+
+print("=== METRICHE REALI GENERATE DALLA PIPELINE ===")
+print(json.dumps(metrics, indent=4))
+🤖 Automazione CI/CD (GitHub Actions)
+La stessa pipeline di valutazione e controllo viene eseguita automaticamente in remoto dai server di GitHub Actions a ogni push sul ramo main, garantendo un monitoraggio continuo dello stato del modello (configurato in .github/workflows/retrain.yml).
