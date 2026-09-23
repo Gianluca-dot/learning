@@ -1,13 +1,15 @@
 # learning Platform
 
 > ⚠️ **AVVISO IMPORTANTE SULLA TRADUZIONE AUTOMATICA:**
-> Se stai usando il browser in italiano con la **traduzione automatica attiva** (es. Google Translate integrato in Chrome/Edge), **DISATTIVALA** per questa pagina o per il repository GitHub.
+> Se stai usando il browser in italiano con la **traduzione automatica attiva** (es. Google Translate integrato in Chrome/Edge), **DISATTIVALA** per questa pagina e per il repository GitHub.
 >
 > 
-> La traduzione automatica potrebbe modificare i nomi dei file, dei comandi o dei percorsi di sistema (es. trasformando `data/` in `dati/` o `evaluate.py` in `valuta.py`), compromettendo l'esecuzione del codice e i comandi da terminale.
-[![CI Pipeline](https://github.com/MachineInnovators/learning/actions/workflows/ci.yml/badge.svg)](https://github.com/MachineInnovators/learning/actions/workflows/ci.yml)
-
-Sistema end-to-end di monitoraggio e inferenza del sentiment sviluppato per **MachineInnovators Inc.**. Il progetto utilizza un modello basato su RoBERTa (`cardiffnlp/twitter-roberta-base-sentiment-latest`) valutato sul benchmark `tweet_eval` (subset: *sentiment*), integrando pratiche MLOps per la riproducibilità, l'automazione dei test di qualità e il tracciamento dei log a runtime.
+> La traduzione automatica potrebbe modificare i nomi dei file, dei comandi o dei percorsi di sistema (es. trasformando `data/` in `dati/` o `evaluate.py` in `valuta.py`), rendendo difficile l'indiduazione dei file e l'esecuzione dei comandi.
+>
+> Per eseguire i file di GitHub e del relativo Notebook Colab consultare il file INSTRUCTIONS.md
+>
+> 
+Sistema end-to-end di monitoraggio e inferenza del sentiment. Il progetto utilizza un modello basato su RoBERTa (`cardiffnlp/twitter-roberta-base-sentiment-latest`) valutato sul benchmark `tweet_eval` (subset: *sentiment*), integrando pratiche MLOps per la riproducibilità, l'automazione dei test di qualità e il tracciamento dei log a runtime.
 
 ---
 
