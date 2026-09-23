@@ -15,7 +15,6 @@ Sistema end-to-end di monitoraggio e inferenza del sentiment. Il progetto utiliz
 
 ## 📐 Architettura del Progetto
 
-```text
 ├── .github/
 │   └── workflows/
 │       └── ci.yml              # Pipeline GitHub Actions (Quality Gate)
@@ -35,5 +34,7 @@ Sistema end-to-end di monitoraggio e inferenza del sentiment. Il progetto utiliz
 │   ├── test_model.py           # Test su preprocessing e struttura inferenze
 │   └── test_evaluate.py        # Test di confronto su Quality Gate (Accuracy/F1)
 ├── app.py                      # Dashboard di monitoraggio e inferenza (Streamlit)
+├── INSTRUCTIONS.md             # Guida operativa e comandi per l'avvio del progetto
 ├── requirements.txt            # Dipendenze Python con versioni bloccate
 └── README.md                   # Documentazione di progetto
+
